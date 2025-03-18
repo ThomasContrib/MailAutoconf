@@ -6,11 +6,13 @@
 # Mercurial
 .hg/
 .hgignore
+.hgtags
 
 # Some batch files
 updateVersion.bat
 updateVersion_.bat
 sln.bat
+publish-nuget-org.bat
 
 # User-specific files
 *.rsuser

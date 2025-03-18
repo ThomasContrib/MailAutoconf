@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <PackageId>MailAutoconf</PackageId>
+    <AssemblyName>MailAutoconf</AssemblyName>
+    <Version>1.0.3</Version>
+    <Description>Detects mail server settings for POP3, IMAP and SMTP</Description>
+    <Author>Thomas</Author>
+    <PackageTags>pop;pop3;imap;smtp;mail server;autodetect;detect;settings;config;configuration;autoconfig</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageProjectUrl>https://github.com/ThomasContrib/MailAutoconf</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.8.0" />
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>
