@@ -83,4 +83,29 @@ uses a custom filter that only accepts protocol settings for unencrypted network
 
 The `PortVerifier` verifies the mail server settings. `Verify()` attempts to authenticate using the credentials provided and stores the result in `serverSettings.Pop3/Imap/Smtp.Verification`.
 
-This class internally uses the `PortsChecker`, see above.
+This class internally uses the `PortsChecker`, see above. `Verify()` returns the port check results from the PortsChecker used. You may use them together with other port check results (`PortCheckResult[]`):
+
+```C#
+var serverSettings = new ServerSettingsFinder(mailAddress: "john.doe@yahoo.com")
+	.GetSettings()
+	.SelectBest();
+
+var verifyResults = PortVerifier.Verify(serverSettings, forceVerification: false);
+
+var compareProtocolPortSocketType = 
+    EqualityComparer<PortCheckResult>.Create((x, y) =>
+                                             
+        x.Protocol == y.Protocol &&
+        x.ProtocolSettings.Port == y.ProtocolSettings.Port &&
+        x.ProtocolSettings.SocketType == y.ProtocolSettings.SocketType,
+                                             
+        obj => HashCode.Combine(
+            obj.Protocol, 
+            obj.ProtocolSettings.Port, 
+            obj.ProtocolSettings.SocketType));
+
+var portCheckResults = PortCheckResults.From(allServerSettings)
+	.Concat(verifyResults)
+	.Distinct(compareProtocolPortSocketType);
+```
+

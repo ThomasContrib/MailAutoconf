@@ -6,7 +6,7 @@
     <Nullable>disable</Nullable>
     <PackageId>MailAutoconf</PackageId>
     <AssemblyName>MailAutoconf</AssemblyName>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Description>Detects mail server settings for POP3, IMAP and SMTP</Description>
     <Author>Thomas</Author>
     <PackageTags>pop;pop3;imap;smtp;mail server;autodetect;detect;settings;config;configuration;autoconfig</PackageTags>

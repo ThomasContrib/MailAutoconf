@@ -40,6 +40,7 @@ namespace MailAutoconf.Settings
 
 			static ProtocolSettings BestOfProtocols(IEnumerable<ProtocolSettings> protocolSettings)
 				=> protocolSettings
+					.NotNull()
 					.OrderBy(Score.ScoreProtocol)
 					.FirstOrDefault();
 

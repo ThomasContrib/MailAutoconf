@@ -12,6 +12,7 @@
 updateVersion.bat
 updateVersion_.bat
 sln.bat
+build-for-nuget.org.bat
 publish-nuget-org.bat
 
 # User-specific files
